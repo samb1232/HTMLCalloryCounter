@@ -11,6 +11,7 @@ const height = form.querySelector('#height');
 const gender = form.querySelector('input[name="gender"]:checked');
 
 const activities = form.querySelectorAll('input[name="activity"]');
+console.log(activities);
 
 let CheckedActivity = form.querySelector('input[name="activity"]:checked');
 
@@ -32,17 +33,16 @@ inputs.forEach((input) => {
             resetButton.disabled = false;
         }
     });
-    
-    // Set checked activity
-    input.addEventListener('input', (key, value) => {
-        for (let activity of activities) {
-            if (activity.checked) {
-                CheckedActivity = activity;
-            }
+});
+
+activities.forEach((activity) => {
+     activity.addEventListener('input', (key, value) => {
+        if (activity.checked) {
+            CheckedActivity = activity;
+            console.log(CheckedActivity);
         }
     });
 });
-
 
 // restore defaults
 resetButton.addEventListener('click', () => {

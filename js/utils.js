@@ -1,4 +1,4 @@
-export function getNormCalories(weight, height, age, isWoman, coef) {
+export function getNormCalories(age, height, weight, isWoman, coef) {
     let N = (10 * weight) + (6.25 *height) - (5 * age);
     return coef * ((isWoman) ? N - 161 : N + 5);
 }
